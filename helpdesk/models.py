@@ -290,7 +290,7 @@ class Queue(models.Model):
 
             Permission.objects.create(
                 name=_("Permission for queue: ") + self.title,
-                content_type=ContentType.objects.get(model="queue"),
+                content_type=ContentType.objects.get_for_model(self),
                 codename=basename,
             )
 
